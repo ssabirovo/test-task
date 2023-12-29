@@ -1,0 +1,14 @@
+@mixin transition {
+  transition: all 0.2s ease-in-out;
+}
+@mixin flex($dir: row, $content: center, $items: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $content;
+  align-items: $items;
+}
+@mixin tablet {
+  @media (max-width: 992px) {
+    @content;
+  }
+}

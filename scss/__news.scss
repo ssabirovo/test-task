@@ -1,0 +1,126 @@
+.news {
+  color: $white-color;
+  &_navigator {
+    @include flex(null, flex-start);
+    padding: 20px 0;
+    gap: 20px;
+    * {
+      min-width: max-content;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    div {
+      border-radius: 10px;
+      padding: 1px;
+      background: $gray-color;
+      width: 100%;
+    }
+  }
+  &_title {
+    padding: 10px 0;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  &_cards {
+    @include flex(null, flex-start);
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
+    gap: 1.25%;
+    margin-bottom: 30px;
+    @media (max-width: 432px) {
+      flex-direction: column;
+    }
+    &_card {
+      overflow: hidden;
+      border-radius: 15px;
+      margin-top: 10px;
+      width: 24%;
+      min-width: 200px;
+      min-height: 300px;
+      border: 1px solid $gray-color;
+      @include tablet {
+        width: 32%;
+      }
+
+      @media (max-width: 656px) {
+        width: 49%;
+      }
+      @media (max-width: 432px) {
+        width: 100%;
+      }
+      img {
+        width: 100%;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 200;
+        margin-top: 20px;
+      }
+      &_header {
+        position: relative;
+        h5 {
+          position: absolute;
+          bottom: 0;
+          text-align: bottom;
+          color: #fff;
+          font-size: 18px;
+          font-weight: 600;
+          max-height: 100%;
+          width: 100%;
+          padding: 0 10px;
+          text-align: center;
+
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+
+          background: linear-gradient(
+            0deg,
+            #2d2f34 0%,
+            rgba(255, 255, 255, 0) 105.5%
+          );
+        }
+      }
+      &_description,
+      &_footer {
+        margin: 0 10px;
+      }
+      &_description {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      &_footer {
+        @include flex(null, space-between);
+        margin-bottom: 10px;
+        p {
+          font-size: 11px;
+          font-weight: 700;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}
+
+.pagination {
+  @include flex;
+  gap: 20px;
+  margin: 50px 0;
+  font-size: 14px;
+  color: $white-color;
+  font-weight: 500;
+  p:hover {
+    transition: all 0.2s ease-in-out;
+    color: $active-color;
+    cursor: pointer;
+  }
+  &_active {
+    color: $active-color;
+  }
+}

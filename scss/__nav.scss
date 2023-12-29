@@ -1,0 +1,145 @@
+.navbar {
+  padding: 20px 0;
+  width: 100%;
+
+  @include flex(null, space-between);
+  border-bottom: 1px solid #fff3;
+
+  &_left {
+    @include flex();
+    gap: 40px;
+    transition: all 0.2s ease-in-out;
+    &_logo {
+      width: 230px;
+      transition: all 0.2s ease-in-out;
+      @include tablet {
+        width: 142px;
+      }
+    }
+    &_search {
+      @include flex();
+      border: 1px solid $white-color;
+      padding: 10px 20px;
+      border-radius: 50px;
+      gap: 10px;
+      img {
+        width: 15px;
+      }
+      input {
+        background-color: transparent;
+        border: none;
+        width: 270px;
+        color: $white-color;
+        font-size: 12px;
+        font-weight: 600;
+        &:focus {
+          outline: none;
+          .navbar_left_search {
+            border-color: red;
+          }
+        }
+        &::placeholder {
+          color: white;
+        }
+      }
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+  &_right {
+    @include flex();
+    gap: 20px;
+    @include tablet {
+      display: none;
+    }
+    &_icon {
+      @include flex();
+      width: 48px;
+      height: 48px;
+
+      border-radius: 500px;
+      color: $white-color;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      @include tablet {
+        width: 40px;
+        height: 40px;
+      }
+      div {
+        border: 1px solid #fff2;
+        border-radius: 500px;
+        width: 100%;
+        height: 100%;
+        @include flex();
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover div {
+        border: 1px solid $active-color;
+        color: $active-color;
+        transform: scale(90%);
+      }
+      svg {
+        width: 48%;
+      }
+    }
+  }
+  &_mobile {
+    display: none;
+    @include tablet {
+      @include flex;
+      gap: 10px;
+    }
+  }
+  &_search {
+    width: 100%;
+    color: $white-color;
+
+    display: none;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border: 1px solid $white-color;
+    border-radius: 100px;
+    gap: 20px;
+    input {
+      width: 100%;
+      background-color: transparent;
+      border: none;
+      color: $white-color;
+      font-size: 16px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+.open {
+  width: 100%;
+  div {
+    width: 100%;
+  }
+}
+
+.seaechActive {
+  padding: 0;
+  .navbar_search {
+    @include flex(null, space-between);
+  }
+  .navbar_left,
+  .navbar_right,
+  .navbar_mobile {
+    transition: all 0.2s ease-in-out;
+    transform: scale(0);
+    height: 0;
+    position: absolute;
+  }
+}
