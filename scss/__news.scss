@@ -40,6 +40,10 @@
       min-width: 200px;
       min-height: 300px;
       border: 1px solid $gray-color;
+      transition: all .2s ease-in-out;
+      &:hover {
+        border: 1px solid $active-color;
+      }
       @include tablet {
         width: 32%;
       }

@@ -224,6 +224,10 @@
   min-width: 200px;
   min-height: 300px;
   border: 1px solid #fff3;
+  transition: all 0.2s ease-in-out;
+}
+.news_cards_card:hover {
+  border: 1px solid #e1242d;
 }
 @media (max-width: 992px) {
   .news_cards_card {
